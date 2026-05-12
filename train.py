@@ -158,10 +158,10 @@ start_epoch = len(results['train_loss'])
 for epoch in range(start_epoch, args.epochs):
     # Create training dataset
     if args.shuffle_training:
-        training_dataset = SegmentationDataSet_elbow_aug(dataset_path = args.dataset_path, df_input = args.train_csv, mask_ratio = args.mask_ratio, transform = train_transform, augmentation=args.augmentation, augmentation_number=args.augmentation_number, frac_ratio=args.frac_ratio, random_state_seed=args.random_state_seed, random_shuffle = epoch, softmask=args.softmask, random_masking = args.random_masking, aug_threshold = args.aug_threshold)        
+        training_dataset = SegmentationDataSet_train(dataset_path = args.dataset_path, df_input = args.train_csv, mask_ratio = args.mask_ratio, transform = train_transform, augmentation=args.augmentation, augmentation_number=args.augmentation_number, frac_ratio=args.frac_ratio, random_state_seed=args.random_state_seed, random_shuffle = epoch, softmask=args.softmask, random_masking = args.random_masking, aug_threshold = args.aug_threshold)        
         print('test original concatenated images')
     else:
-        training_dataset = SegmentationDataSet_elbow_aug(dataset_path = args.dataset_path, df_input = args.train_csv, mask_ratio = args.mask_ratio, transform = train_transform, augmentation=args.augmentation, augmentation_number=args.augmentation_number, frac_ratio=args.frac_ratio, random_state_seed=args.random_state_seed, softmask=args.softmask)        
+        training_dataset = SegmentationDataSet_train(dataset_path = args.dataset_path, df_input = args.train_csv, mask_ratio = args.mask_ratio, transform = train_transform, augmentation=args.augmentation, augmentation_number=args.augmentation_number, frac_ratio=args.frac_ratio, random_state_seed=args.random_state_seed, softmask=args.softmask)        
         print('test original concatenated images-unchanged pair: no shuffle training')
     training_dataloader = data.DataLoader(dataset=training_dataset, batch_size=args.batch_size, shuffle = True, num_workers=4)
     with open(args.save_dir + 'training_result.txt', 'a') as f:
