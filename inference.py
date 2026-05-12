@@ -51,7 +51,6 @@ parser.add_argument('--model_name', default='latest_model.pth', type=str,
                         help='model name')
 parser.add_argument('--softmask', action='store_true', help='use softmask')
 parser.add_argument('--random_masking', action='store_true', help='random masking')
-parser.add_argument('--random', action='store_true', help='random or most similar pairs during inference')
 parser.add_argument('--max_performance', action='store_true', help='max performance during inference')
 parser.add_argument('--device_gpu', default='cuda', type=str, help='specify the gpu you are using')
 parser.add_argument('--cfg', default ='./configs/vit_base__800ep/simmim_pretrain__vit_base__img224__800ep.yaml', type=str,  metavar="FILE", help='path to config file', )
