@@ -107,7 +107,7 @@ test_transform = transforms.Compose([
         transforms.Resize([224, 224]), 
         transforms.ToTensor()])
 # Create test dataset
-test_dataset = SegmentationDataSet_elbow_test_random(dataset_path=args.dataset_path, df_input1=args.train_csv, df_input2=args.test_csv, mask_ratio=args.mask_ratio,transform=test_transform, softmask=args.softmask, random_masking = args.random_masking)
+test_dataset = SegmentationDataSet_test_random(dataset_path=args.dataset_path, df_input1=args.train_csv, df_input2=args.test_csv, mask_ratio=args.mask_ratio,transform=test_transform, softmask=args.softmask, random_masking = args.random_masking)
 
 test_dataloader = data.DataLoader(dataset=test_dataset,
                                       batch_size=args.batch_size,
