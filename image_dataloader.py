@@ -67,7 +67,7 @@ class SoftMaskGenerator:
 
 
 
-class SegmentationDataSet_elbow_aug(data.Dataset):
+class SegmentationDataSet_train(data.Dataset):
     def __init__(self, dataset_path: str, df_input:str, mask_ratio:float, transform=None, augmentation=False, augmentation_number=5, frac_ratio=0.1, random_state_seed = 123, random_shuffle=321, softmask=False, random_masking = False, aug_threshold = 0.5):
         self.dataset_path = dataset_path
         self.input_path = os.path.join(self.dataset_path, 'Images/')  
@@ -196,7 +196,7 @@ class SegmentationDataSet_elbow_aug(data.Dataset):
             mask = self.mask_generator()            
         return input, mask, output, image_filename1, image_filename2
 
-class SegmentationDataSet_elbow_test_random(data.Dataset):
+class SegmentationDataSet_test_random(data.Dataset):
     def __init__(self, dataset_path: str, df_input1:str, df_input2:str, mask_ratio:float, transform=None, softmask=False, random_masking=False):
         self.dataset_path = dataset_path
         self.input_path = os.path.join(self.dataset_path, 'Images/')  
