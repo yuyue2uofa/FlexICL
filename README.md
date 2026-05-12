@@ -1,4 +1,4 @@
-<img width="626" height="295" alt="image" src="https://github.com/user-attachments/assets/caef6b9e-5e6c-4cdf-8335-491bfb608bce" /># FlexICL
+# FlexICL
 
 This is the repository of paper [FlexICL: A Flexible Visual In-Context Learning Framework for Elbow and Wrist Ultrasound Segmentation](https://ieeexplore.ieee.org/abstract/document/11494781)
 
